@@ -42,3 +42,15 @@ Application (with the embedded H2 database) is ready to be used ! You can access
 - Appropriate usage of packages
 - Is the application running as expected
 - No performance issues
+
+
+#### Improvement possible
+  - Create a Dockerfile to generate docker image for the microservice
+  - Add kubernetes deployment files
+  - Separate Authenticate APIs to a different project (microservice)
+  - Save authorized users in database and encode passwords 
+  - Export JWT Secret to environment variable
+  - Handle more Exceptions to customize response
+
+
+
