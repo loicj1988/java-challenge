@@ -1,56 +1,58 @@
-### How to use this spring-boot project
+Employee API challenge application
+===
 
-- Install packages with `mvn package`
-- Run `mvn spring-boot:run` for starting the application (or use your IDE)
+  This service is an Employee API challenge. It provides end points to managed employees. 
 
-Application (with the embedded H2 database) is ready to be used ! You can access the url below for testing it :
+---
 
-- Swagger UI : http://localhost:8080/swagger-ui.html
-- H2 UI : http://localhost:8080/h2-console
+## Libraries used
 
-> Don't forget to set the `JDBC URL` value as `jdbc:h2:mem:testdb` for H2 UI.
+  1. Spring Boot 2.1.4
+  2. Json webtoken
+  3. Swagger API
+  4. Hibernate Validation API
+  5. Spring Boot Test
 
+---
 
+## Features
 
-### Instructions
+  These services can perform, Employee CRUD operations.
 
-- download the zip file of this project
-- create a repository in your own github named 'java-challenge'
-- clone your repository in a folder on your machine
-- extract the zip file in this folder
-- commit and push
+---
 
-- Enhance the code in any ways you can see, you are free! Some possibilities:
-  - Add tests
-  - Change syntax
-  - Protect controller end points
-  - Add caching logic for database calls
-  - Improve doc and comments
-  - Fix any bug you might find
-- Edit readme.md and add any comments. It can be about what you did, what you would have done if you had more time, etc.
-- Send us the link of your repository.
+## Running
 
-#### Restrictions
-- use java 8
+  1. Maven build : mvn clean install
+  2. Application execution : java -jar target/api-demo-[version].jar
 
+---
 
-#### What we will look for
-- Readability of your code
-- Documentation
-- Comments in your code 
-- Appropriate usage of spring boot
-- Appropriate usage of packages
-- Is the application running as expected
-- No performance issues
+## Versions
 
+  - 0.0.1-SNAPSHOT : API improved for java challenge 
 
-#### Improvement possible
-  - Create a Dockerfile to generate docker image for the microservice
+---
+
+## Improvements possible
+
+  - Create a Dockerfile to create a docker image for this microservice
   - Add kubernetes deployment files
   - Separate Authenticate APIs to a different project (microservice)
-  - Save authorized users in database and encode passwords 
+  - Save authorized users in database and encode their password 
   - Export JWT Secret to environment variable
   - Handle more Exceptions to customize response
+  - Implement logging
+  - Add more tests for controller
 
+---
 
+## Contributors
 
+@ Loic Jacquel <loic.jacquel@gmail.com>
+
+---
+
+## License & copyrights
+
+MIT license or something else ...

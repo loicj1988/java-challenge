@@ -5,6 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Default exception response
+ * 
+ * @author Loic
+ * @version 0.0.1
+ *
+ */
 @AllArgsConstructor
 public class ExceptionResponse {
 

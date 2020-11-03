@@ -16,6 +16,15 @@ import jp.co.axa.apidemo.config.security.EmployeeUserDetailsService;
 import jp.co.axa.apidemo.utils.JwtUtil;
 
 
+/**
+ * Jwt verification filter
+ * 
+ * Filter request to get the jwt header and authentify the user.
+ * 
+ * @author Loic
+ * @version 0.0.1
+ *
+ */
 @Component
 public class JwtRequestFilter extends GenericFilterBean {
 
@@ -56,6 +65,12 @@ public class JwtRequestFilter extends GenericFilterBean {
     filterChain.doFilter(servletRequest, servletResponse);
   }
 
+  /**
+   * Get the token present in the http header request
+   * 
+   * @param request
+   * @return The jwt token
+   */
   private String getTokenFromRequest(HttpServletRequest request) {
     // Get authorization header
     String authorizationHeader = request.getHeader(AUTHORIZATION);

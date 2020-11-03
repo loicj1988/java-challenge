@@ -7,6 +7,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Validation error response
+ * 
+ * @author Loic
+ * @version 0.0.1
+ *
+ */
 @NoArgsConstructor
 public class ValidationErrorResponse {
 

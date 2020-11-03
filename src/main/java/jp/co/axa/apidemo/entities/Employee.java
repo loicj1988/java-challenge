@@ -12,16 +12,28 @@ import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Employee entity class
+ * 
+ * @author Loic
+ * @version 0.0.1
+ */
 @Entity
 @Table(name = "EMPLOYEE")
 public class Employee {
 
+  /**
+   * The employee id
+   */
   @Getter
   @Setter
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
+  /**
+   * The employee name
+   */
   @Getter
   @Setter
   @Column(name = "EMPLOYEE_NAME", nullable = false)
@@ -29,6 +41,9 @@ public class Employee {
   @Size(min = 1, max = 30, message = "Employee name length must be between 1 and 30")
   private String name;
 
+  /**
+   * The employee salary
+   */
   @Getter
   @Setter
   @Column(name = "EMPLOYEE_SALARY", nullable = false)
@@ -36,6 +51,9 @@ public class Employee {
   @Positive(message = "Salary must be more than 0")
   private Integer salary;
 
+  /**
+   * The employee department
+   */
   @Getter
   @Setter
   @Column(name = "DEPARTMENT", nullable = false)

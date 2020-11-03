@@ -15,9 +15,25 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
+/**
+ * Custom exception handler
+ * 
+ * Handle exception thrown by controller to send custom response to the client
+ * 
+ * @author Loic
+ * @version 0.0.1
+ *
+ */
 @ControllerAdvice
 public class AppExceptionsHandler extends ResponseEntityExceptionHandler {
 
+  /**
+   * Default exception handler
+   * 
+   * @param ex The handled exception
+   * @param request The http web request
+   * @return The custom error response
+   */
   @ExceptionHandler(value = {Exception.class})
   public ResponseEntity<Object> handleAnyException(Exception ex, WebRequest request) {
 
@@ -47,6 +63,13 @@ public class AppExceptionsHandler extends ResponseEntityExceptionHandler {
     return new ResponseEntity<Object>(validationErrorResponse, headers, status);
   }
 
+
+  /**
+   * JSON mapping exception handler
+   * 
+   * @param ex The handled JSON mapping exception
+   * @return The custom error response
+   */
   @ExceptionHandler
   @ResponseStatus(HttpStatus.BAD_REQUEST)
   public ResponseEntity<Object> handleJsonMappingException(JsonMappingException ex) {
@@ -55,6 +78,12 @@ public class AppExceptionsHandler extends ResponseEntityExceptionHandler {
     return new ResponseEntity<Object>(exceptionResponse, new HttpHeaders(), HttpStatus.BAD_REQUEST);
   }
 
+  /**
+   * Type mismatch exception handler
+   * 
+   * @param ex The handled JSON mapping exception
+   * @return The custom error response
+   */
   @ExceptionHandler(MethodArgumentTypeMismatchException.class)
   @ResponseStatus(HttpStatus.BAD_REQUEST)
   public ResponseEntity<Object> handleConverterErrors(MethodArgumentTypeMismatchException ex) {
